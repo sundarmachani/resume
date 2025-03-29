@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
-import logo from './assets/logo.svg';
-import resume from './assets/sundar-machani-resume.pdf';
+import logo from "./assets/logo.svg";
+import resume from "./assets/sundar-machani-resume.pdf";
 import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet";
 
@@ -23,6 +23,42 @@ const AnimatedPage = ({ children }) => (
     {children}
   </motion.section>
 );
+
+import { Menu, X } from "lucide-react";
+
+function MobileMenu({ darkMode, setDarkMode }) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setOpen(!open)}>
+        {open ? <X size={24} /> : <Menu size={24} />}
+      </button>
+      {open && (
+        <div className="absolute top-16 right-4 bg-white dark:bg-gray-900 shadow-lg p-4 rounded-md space-y-3 z-50 w-48">
+          <NavLink to="/" label="Home" />
+          <NavLink to="/projects" label="Projects" />
+          <NavLink to="/experience" label="Experience" />
+          <NavLink to="/skills" label="Skills" />
+          <NavLink to="/contact" label="Contact" />
+          <a
+            href={resume}
+            download
+            className="block text-sm bg-green-600 text-white px-3 py-1 rounded text-center hover:bg-green-700"
+          >
+            Resume
+          </a>
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="w-full flex justify-center text-sm bg-gray-200 dark:bg-gray-800 py-1 rounded"
+          >
+            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
+      )}
+    </>
+  );
+}
 
 const FadeInSection = ({ children, delay = 0 }) => {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -99,26 +135,41 @@ function App({ darkMode, setDarkMode }) {
         />
         <meta property="og:image" content="/preview.png" />
       </Helmet>
-      <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md p-4 flex justify-between items-center transition-colors">
-        <Link to="/" className="flex items-center space-x-2">
-          <img
-            src={logo}
-            alt="logo"
-            className="w-6 h-6"
-            onError={(e) => (e.target.style.display = "none")}
-          />
-          <span className="text-xl font-bold">Sundar Machani</span>
-        </Link>
-        <nav className="space-x-4">
-          <NavLink to="/" label="Home" />
-          <NavLink to="/projects" label="Projects" />
-          <NavLink to="/experience" label="Experience" />
-          <NavLink to="/skills" label="Skills" />
-          <NavLink to="/contact" label="Contact" />
-          <button onClick={() => setDarkMode(!darkMode)} className="ml-4">
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-        </nav>
+      <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md p-4 transition-colors">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <Link to="/" className="flex items-center space-x-2">
+            <img src={logo} alt="logo" className="w-6 h-6" />
+            <span className="text-xl font-bold">Sundar Machani</span>
+          </Link>
+
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center space-x-4">
+            <NavLink to="/" label="Home" />
+            <NavLink to="/projects" label="Projects" />
+            <NavLink to="/experience" label="Experience" />
+            <NavLink to="/skills" label="Skills" />
+            <NavLink to="/contact" label="Contact" />
+            <a
+              href={resume}
+              download
+              className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700"
+            >
+              Resume
+            </a>
+            <button onClick={() => setDarkMode(!darkMode)} className="ml-2">
+              {darkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+          </nav>
+
+          {/* Mobile hamburger */}
+          <div className="md:hidden">
+            <MobileMenu
+              darkMode={darkMode}
+              setDarkMode={setDarkMode}
+              NavLink={NavLink}
+            />
+          </div>
+        </div>
       </header>
 
       <main className="p-4 flex-grow">
@@ -227,15 +278,6 @@ const Home = () => {
           className="px-4 py-2 bg-blue-700 text-white rounded hover:bg-blue-800"
         >
           LinkedIn
-        </a>
-        <a
-          href={resume}
-          download
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-800"
-        >
-          Download Resume
         </a>
       </div>
     </AnimatedPage>
