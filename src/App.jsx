@@ -13,15 +13,6 @@ import resume from "./assets/sundar-machani-resume.pdf";
 import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet";
 
-// Helper: Ensure the OG image URL is absolute.
-// If "logo" is a relative path, prepend your domain.
-const getOgImageUrl = (img) => {
-  // Check if the logo string starts with "http"
-  return img.startsWith("http")
-    ? img
-    : `https://sundar-machani.vercel.app${img}`;
-};
-
 const AnimatedPage = ({ children }) => (
   <motion.section
     initial={{ opacity: 0, y: 10 }}
@@ -170,7 +161,7 @@ function App({ darkMode, setDarkMode }) {
         />
         <meta
           property="og:image"
-          content={getOgImageUrl(logo)}
+          content="https://res.cloudinary.com/dsgj3q1kw/image/upload/v1743224632/quwwyny3hq0eaqphfzr0.png"
         />
         <meta property="og:url" content="https://sundar-machani.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -183,7 +174,9 @@ function App({ darkMode, setDarkMode }) {
               alt="Sundar Machani logo"
               className="w-8 h-8 sm:w-10 sm:h-10"
             />
-            <span className="text-xl sm:text-2xl font-bold">Sundar Machani</span>
+            <span className="text-xl sm:text-2xl font-bold">
+              Sundar Machani
+            </span>
           </Link>
 
           {/* Desktop navigation */}
@@ -342,9 +335,7 @@ const Projects = () => {
       <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Projects</h2>
       <div className="space-y-8">
         <div>
-          <h3 className="text-2xl font-bold">
-            Machani’s E-Commerce Platform
-          </h3>
+          <h3 className="text-2xl font-bold">Machani’s E-Commerce Platform</h3>
           <p className="mb-1 text-sm text-blue-400">
             <a
               href="https://machanis.vercel.app/"
@@ -374,9 +365,7 @@ const Projects = () => {
             </a>
           </p>
           <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-            <li>
-              Built using MERN stack with Stripe integration for payments
-            </li>
+            <li>Built using MERN stack with Stripe integration for payments</li>
             <li>
               Implemented JWT auth and role-based access for secure operations
             </li>
@@ -418,9 +407,7 @@ const Projects = () => {
           </p>
           <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
             <li>Diary platform using React, Spring Boot, JWT, PostgreSQL</li>
-            <li>
-              Real-time updates via Axios and full Swagger documentation
-            </li>
+            <li>Real-time updates via Axios and full Swagger documentation</li>
           </ul>
         </div>
 
@@ -437,12 +424,8 @@ const Projects = () => {
             </a>
           </p>
           <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
-            <li>
-              Built a YOLO v1-based model for real-time object detection
-            </li>
-            <li>
-              Achieved 98% localization and 95% class prediction accuracy
-            </li>
+            <li>Built a YOLO v1-based model for real-time object detection</li>
+            <li>Achieved 98% localization and 95% class prediction accuracy</li>
           </ul>
         </div>
 
@@ -487,7 +470,8 @@ const Experience = () => {
           </p>
           <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
             <li>
-              Contributed to a large-scale MERN application (Highest Good Network)
+              Contributed to a large-scale MERN application (Highest Good
+              Network)
             </li>
             <li>Resolved 15+ critical bugs and implemented 5+ new features</li>
             <li>
@@ -528,8 +512,8 @@ const Experience = () => {
               time by 35% and enabling real-time monitoring
             </li>
             <li>
-              Resolved security vulnerabilities using JFrog and SonarQube, boosting
-              compliance from 65% to 87%
+              Resolved security vulnerabilities using JFrog and SonarQube,
+              boosting compliance from 65% to 87%
             </li>
             <li>
               Developed SOAP integrations and optimized legacy APIs to eliminate
@@ -579,7 +563,8 @@ const Skills = () => {
         <div>
           <h3 className="text-xl font-bold mb-2">DevOps & Cloud</h3>
           <p>
-            AWS, GCP, Docker, Kubernetes, Vercel, Render, Jenkins, GitHub Actions
+            AWS, GCP, Docker, Kubernetes, Vercel, Render, Jenkins, GitHub
+            Actions
           </p>
         </div>
         <div>
