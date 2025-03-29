@@ -26,7 +26,7 @@ const AnimatedPage = ({ children }) => (
 
 import { Menu, X } from "lucide-react";
 
-function MobileMenu({ darkMode, setDarkMode }) {
+function MobileMenu({ darkMode, setDarkMode, NavLink }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -36,20 +36,36 @@ function MobileMenu({ darkMode, setDarkMode }) {
       </button>
       {open && (
         <div className="absolute top-16 right-4 bg-white dark:bg-gray-900 shadow-lg p-4 rounded-md space-y-3 z-50 w-48">
-          <NavLink to="/" label="Home" />
-          <NavLink to="/projects" label="Projects" />
-          <NavLink to="/experience" label="Experience" />
-          <NavLink to="/skills" label="Skills" />
-          <NavLink to="/contact" label="Contact" />
+          <NavLink to="/" label="Home" onClick={() => setOpen(false)} />
+          <NavLink
+            to="/projects"
+            label="Projects"
+            onClick={() => setOpen(false)}
+          />
+          <NavLink
+            to="/experience"
+            label="Experience"
+            onClick={() => setOpen(false)}
+          />
+          <NavLink to="/skills" label="Skills" onClick={() => setOpen(false)} />
+          <NavLink
+            to="/contact"
+            label="Contact"
+            onClick={() => setOpen(false)}
+          />
           <a
             href={resume}
             download
             className="block text-sm bg-green-600 text-white px-3 py-1 rounded text-center hover:bg-green-700"
+            onClick={() => setOpen(false)}
           >
             Resume
           </a>
           <button
-            onClick={() => setDarkMode(!darkMode)}
+            onClick={() => {
+              setDarkMode(!darkMode);
+              setOpen(false);
+            }}
             className="w-full flex justify-center text-sm bg-gray-200 dark:bg-gray-800 py-1 rounded"
           >
             {darkMode ? <Sun size={18} /> : <Moon size={18} />}
@@ -112,10 +128,11 @@ function AppWrapper() {
 
 function App({ darkMode, setDarkMode }) {
   const location = useLocation();
-  const NavLink = ({ to, label }) => (
+  const NavLink = ({ to, label, onClick }) => (
     <Link
       to={to}
-      className={`hover:underline transition-colors ${
+      onClick={onClick}
+      className={`block md:inline hover:underline transition-colors ${
         location.pathname === to
           ? "text-blue-500 dark:text-blue-400 font-semibold"
           : ""
