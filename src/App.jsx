@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import { Moon, Sun } from "lucide-react";
 import { motion } from "framer-motion";
+import logo from './assets/logo.svg';
+import resume from './assets/sundar-machani-resume.pdf';
 import { useInView } from "react-intersection-observer";
 import { Helmet } from "react-helmet";
 
@@ -100,7 +102,7 @@ function App({ darkMode, setDarkMode }) {
       <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md p-4 flex justify-between items-center transition-colors">
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/logo.svg"
+            src={logo}
             alt="logo"
             className="w-6 h-6"
             onError={(e) => (e.target.style.display = "none")}
@@ -227,7 +229,7 @@ const Home = () => {
           LinkedIn
         </a>
         <a
-          href="/sundar-machani-resume.pdf"
+          href={resume}
           download
           target="_blank"
           rel="noopener noreferrer"
