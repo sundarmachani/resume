@@ -161,7 +161,7 @@ function App({ darkMode, setDarkMode }) {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dsgj3q1kw/image/upload/v1743224632/quwwyny3hq0eaqphfzr0.png"
+          content="https://res.cloudinary.com/dsgj3q1kw/image/upload/v1743457523/edp2yqjnanfooxjsaljf.png"
         />
         <meta property="og:url" content="https://sundar-machani.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
