@@ -55,14 +55,14 @@ function MobileMenu({ darkMode, setDarkMode, NavLink }) {
             label="Contact"
             onClick={() => setOpen(false)}
           />
-          <a
+          {/* <a
             href={resume}
             download
             className="block text-sm bg-green-600 text-white px-3 py-1 rounded text-center hover:bg-green-700 transition-colors"
             onClick={() => setOpen(false)}
           >
             Resume
-          </a>
+          </a> */}
           <button
             onClick={() => {
               setDarkMode(!darkMode);
@@ -161,7 +161,7 @@ function App({ darkMode, setDarkMode }) {
         />
         <meta
           property="og:image"
-          content="https://res.cloudinary.com/dsgj3q1kw/image/upload/v1743457523/edp2yqjnanfooxjsaljf.png"
+          content="https://res.cloudinary.com/dsgj3q1kw/image/upload/v1743224632/quwwyny3hq0eaqphfzr0.png"
         />
         <meta property="og:url" content="https://sundar-machani.vercel.app" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -186,13 +186,13 @@ function App({ darkMode, setDarkMode }) {
             <NavLink to="/experience" label="Experience" />
             <NavLink to="/skills" label="Skills" />
             <NavLink to="/contact" label="Contact" />
-            <a
+            {/* <a
               href={resume}
               download
               className="px-3 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700 transition-colors"
             >
               Resume
-            </a>
+            </a> */}
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="ml-2 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
