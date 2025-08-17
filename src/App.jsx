@@ -295,10 +295,14 @@ const Home = () => {
         Hi, I'm Sundar Machani 👋
       </h2>
       <p className="text-lg mb-6 max-w-2xl">
-        Full-stack Software Engineer with experience in building scalable
-        applications using Java, Spring Boot, React, and Node.js. Passionate
-        about crafting clean code, solving meaningful problems, and continuously
-        learning new technologies.
+        Full Stack Developer with 4+ years of experience building
+        high-performance web applications using Java, Spring Boot, React, and
+        Angular. Skilled in designing secure REST APIs, developing responsive
+        UIs, and deploying scalable microservices on cloud platforms like AWS.
+        Proven track record of improving performance by 40%, cutting manual
+        operations, and maintaining 99.9% uptime in production. Collaborative
+        team player with strong problem-solving skills and a consistent delivery
+        record in Agile environments.
       </p>
       <div className="space-x-4 flex flex-wrap">
         <a
@@ -464,23 +468,39 @@ const Experience = () => {
       <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Experience</h2>
       <div className="space-y-8">
         <div>
-          <h3 className="text-2xl font-bold">Software Engineer (Volunteer)</h3>
+          <h3 className="text-2xl font-bold">Full Stack Java Developer</h3>
           <p className="text-sm text-gray-400">
-            One Community Global • Remote • Feb 2025 – Present
+            Goldman Sachs • Illinois • August 2024 – Present
           </p>
           <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
             <li>
-              Contributed to a large-scale MERN application (Highest Good
-              Network)
-            </li>
-            <li>Resolved 15+ critical bugs and implemented 5+ new features</li>
-            <li>
-              Enhanced UI responsiveness, project dashboards, and system
-              maintainability
+              Developed automated trade reconciliation features using a Spring
+              Boot based microservices architecture with Java 17, React.js, and
+              MySQL, reducing manual reconciliation time through optimized SQL
+              queries and REST API integration.
             </li>
             <li>
-              Led a team of 14 volunteer engineers — created tasks, enforced
-              updates, and ensured collaboration
+              Built real-time portfolio analytics dashboard using Java, Spring
+              MVC, JavaScript, and PostgreSQL deployed on AWS RDS, serving 50+
+              users with 5,000 daily requests through responsive web design and
+              efficient database queries.
+            </li>
+            <li>
+              Created secure web applications using Spring Security, JWT
+              authentication, HTML5, CSS3, and React.js with cross-browser
+              compatibility, achieving 99% uptime while collaborating with UI/UX
+              designers on mobile-responsive interfaces.
+            </li>
+            <li>
+              Implemented microservices-based RESTful APIs using Spring Boot,
+              Hibernate ORM, and JUnit testing with Maven automation, improving
+              reliability by 25% through comprehensive unit testing and Git
+              workflows.
+            </li>
+            <li>
+              Optimized MySQL and PostgreSQL performance with efficient SQL
+              queries, JDBC connections, and Agile practices, enhancing response
+              time by 40% using systematic testing and code reviews.
             </li>
           </ul>
         </div>
@@ -488,48 +508,41 @@ const Experience = () => {
         <div>
           <h3 className="text-2xl font-bold">Software Engineer</h3>
           <p className="text-sm text-gray-400">
-            Rakuten Symphony • Bangalore, India • Mar 2022 – Aug 2023
+            Rakuten Symphony • Bangalore, India • Aug 2020 – Jul 2023
           </p>
           <ul className="list-disc list-inside ml-4 mt-2 space-y-1">
             <li>
-              Engineered and optimized high-volume microservices using Java,
-              Spring Boot, and Couchbase, processing over 1M orders per month
+              Engineered full-stack features across four microservices using
+              Java, Spring Boot, Angular, and Couchbase (NoSQL), improving
+              onboarding flow and reducing drop-off rates by 30% through UI
+              enhancements and backend tuning.
             </li>
             <li>
-              Spearheaded performance improvements in quotation systems,
-              reducing API latency by 25% and increasing throughput by 20%
+              Led development of internal admin dashboards using Angular,
+              TypeScript, and RxJS for real-time account and quote monitoring;
+              boosted UI responsiveness by 40% and reduced data retrieval time
+              by 25% with optimized REST API integration.
             </li>
             <li>
-              Directed migration from Spring Boot 2.5.4 to 2.7.5, resolving 15+
-              dependency conflicts and reducing maintenance overhead by 30%
+              Modernized legacy services by refactoring codebases, introducing
+              modular React components and lazy-loaded Angular routes, which
+              improved maintainability and reduced load time by 35%.
             </li>
             <li>
-              Implemented 300+ JUnit tests, raising test coverage from 57% to
-              87% and reducing production defects
+              Built secure authentication flows using Spring Security (JWT)
+              integrated with Keycloak and UMS; resolved production login issues
+              and improved reliability for 50,000 enterprise users.
             </li>
             <li>
-              Designed a Grafana/Kibana observability stack, reducing debugging
-              time by 35% and enabling real-time monitoring
+              Improved observability by implementing Grafana dashboards with
+              Prometheus metrics, enabling faster diagnosis of API failures and
+              reducing debugging time from hours to minutes.
             </li>
             <li>
-              Resolved security vulnerabilities using JFrog and SonarQube,
-              boosting compliance from 65% to 87%
-            </li>
-            <li>
-              Developed SOAP integrations and optimized legacy APIs to eliminate
-              redundant calls and enhance response times
-            </li>
-            <li>
-              Collaborated with cross-functional teams on the Quote Management
-              API, improving scalability and team velocity
-            </li>
-            <li>
-              Mentored junior developers and led knowledge-sharing sessions,
-              improving onboarding and code quality
-            </li>
-            <li>
-              Diagnosed and resolved login issues in the User Management System,
-              reducing customer tickets and improving L3 support efficiency
+              Increased backend test coverage to 92% and integrated Cypress for
+              end-to-end testing of Angular apps, cutting regression defects by
+              40% and accelerating CI/CD pipelines with Jenkins and GitHub
+              Actions.
             </li>
           </ul>
         </div>
@@ -541,42 +554,48 @@ const Experience = () => {
 const Skills = () => {
   useTitle("Skills | Sundar Machani");
   return (
-    <AnimatedPage>
-      <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Skills</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <h3 className="text-xl font-bold mb-2">Languages</h3>
-          <p>JavaScript, TypeScript, Java, Python, SQL, HTML, CSS</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">Frontend</h3>
-          <p>React.js, Tailwind CSS, Bootstrap, Axios, jQuery</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">Backend</h3>
-          <p>Spring Boot, Node.js, Express.js, Flask</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">Databases</h3>
-          <p>PostgreSQL, MongoDB, MySQL, Couchbase</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">DevOps & Cloud</h3>
-          <p>
-            AWS, GCP, Docker, Kubernetes, Vercel, Render, Jenkins, GitHub
-            Actions
-          </p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">Testing & Monitoring</h3>
-          <p>JUnit, Mockito, SonarQube, Grafana, Kibana</p>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">Tools & Practices</h3>
-          <p>Git, GitHub, Postman, Swagger, RESTful APIs, Agile</p>
-        </div>
-      </div>
-    </AnimatedPage>
+<AnimatedPage>
+  <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Skills</h2>
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div>
+      <h3 className="text-xl font-bold mb-2">Languages</h3>
+      <p>Java, Python, JavaScript, TypeScript, SQL, HTML, CSS</p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Frontend</h3>
+      <p>React.js, Angular, Vue.js, Redux, Tailwind CSS, Bootstrap</p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Backend</h3>
+      <p>
+        Spring Boot, Spring MVC, Spring Security, Hibernate, Node.js,
+        Express.js, Flask, GraphQL, RESTful APIs
+      </p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Databases</h3>
+      <p>PostgreSQL, MySQL, MongoDB, Couchbase</p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Cloud & DevOps</h3>
+      <p>
+        AWS (EC2, S3, RDS, Lambda), Docker, Kubernetes, GCP, Jenkins,
+        GitHub Actions, Vercel, Render
+      </p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Testing & Monitoring</h3>
+      <p>
+        JUnit, Mockito, Cypress, Selenium, Jest, SonarQube, Grafana, Kibana,
+        Maven, Gradle
+      </p>
+    </div>
+    <div>
+      <h3 className="text-xl font-bold mb-2">Tools & Practices</h3>
+      <p>Git, GitHub, Postman, Swagger, Agile (Scrum/Kanban), Microservices, JWT</p>
+    </div>
+  </div>
+</AnimatedPage>
   );
 };
 
